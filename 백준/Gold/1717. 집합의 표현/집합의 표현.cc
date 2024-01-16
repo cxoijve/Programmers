@@ -1,8 +1,7 @@
 #include<iostream>
-#include<vector>
 
 using namespace std;
-int n, m;
+int n, m; //집합의 원소개수, 수행할 연산의 개수
 int parent[1000001];
 
 int getParent(int x) {
@@ -22,7 +21,6 @@ void findParent(int a, int b) {
     else cout << "NO\n";
 }
 
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
@@ -41,8 +39,6 @@ int main() {
         else { //find연산
             findParent(a, b);
         }
-
     }
-
     return 0;
 }
