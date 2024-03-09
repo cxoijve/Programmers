@@ -15,6 +15,3 @@ def solution(participant, completion):
     # 4. 남은 값이 완주하지 못한 선수의 hash 값이 된다
 
     return hashDict[sumHash]
-
-print(solution(["marina", "josipa", "nikola", "vinko", "filipa"]
-, ["josipa", "filipa", "marina", "nikola"]))
