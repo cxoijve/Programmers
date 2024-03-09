@@ -1,13 +1,12 @@
+from collections import Counter
+
 def solution(nums):
-    answer = 0
-    chosen_length=len(nums)//2
-    tmp=set(nums)
-    num_li=list(tmp)
-    answer_leng=len(num_li)
     
-    if chosen_length < answer_leng:
-        answer = chosen_length
-    else:
-        answer = answer_leng
+    myPocketmonNum = len(nums)//2
     
-    return answer
+    countDict = dict(Counter(nums))
+    
+    if (len(countDict) >= myPocketmonNum):
+        return myPocketmonNum
+    else : 
+        return len(countDict)
