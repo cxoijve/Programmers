@@ -1,2 +1,2 @@
-print("75\n")
-print("jiy87452\n")
+print(116)
+print("jiy87452")
