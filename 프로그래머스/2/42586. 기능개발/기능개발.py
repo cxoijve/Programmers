@@ -1,20 +1,27 @@
+from collections import deque
+
 def solution(progresses, speeds):
     answer = []
-    time = 0
-    count = 0
+    days = deque()
     
-    while len(progresses) > 0:
-        if(progresses[0]+time*speeds[0])>=100:
-            progresses.pop(0)
-            speeds.pop(0)
-            count+=1
-            
+    # 각 기능이 완료되는 날짜 계산
+    for i in range(len(progresses)):
+        x = (100 - progresses[i]) / speeds[i]
+        if x == int(x):
+            days.append(int(x))
         else:
-            if count > 0:
-                answer.append(count)
-                count = 0
-            time+=1
-    answer.append(count)
+            days.append(int(x) + 1)
     
+    
+    # 함께 배포되는 기능 개수 파악
+    while days:
+        temp = days.popleft()
+        count = 1
+        
+        while days and temp >= days[0]:
+            days.popleft()
+            count += 1
+            
+        answer.append(count)
     
     return answer
